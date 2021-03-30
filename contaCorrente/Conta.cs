@@ -21,11 +21,10 @@
             this.saldo += valor;
         }
 
-        public void Transferir(double valor , double origem, double destino)
+        public void Transferir(double valor , double destino)
         {
             this.saldo -= valor;
-            origem = saldo;
-            destino *= valor;
+            destino += valor;
 
             
         }
