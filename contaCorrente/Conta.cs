@@ -21,12 +21,13 @@
             this.saldo += valor;
         }
 
-        public void Transferir(double valor , double destino)
+        public void Transferir(double valor, Conta destino)
         {
-            this.saldo -= valor;
-            destino += valor;
+            if (this.Saca(valor))
+            {
+                destino.Depositar(valor);
+            }
 
-            
         }
     }
 }

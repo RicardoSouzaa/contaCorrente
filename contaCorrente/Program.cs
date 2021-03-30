@@ -45,7 +45,7 @@ namespace contaCorrente
             //transferir 
             Console.WriteLine("Quanto deseja transferir para raquel?");
             transferir = double.Parse(Console.ReadLine());
-            ricardo.Transferir(transferir, raquel.saldo); // valor, conta destino
+            ricardo.Transferir(transferir, raquel); // valor, conta destino / sem o REF o valor nao vai para o objeto raquel...
             Console.WriteLine($"\nnovo saldo ricardo: {ricardo.saldo} \nnovo saldo raquel {raquel.saldo}");
             Console.ReadLine();
         }
