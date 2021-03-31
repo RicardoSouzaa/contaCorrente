@@ -3,7 +3,12 @@
 namespace contaCorrente
 {
     class Program
+
     {
+        static public void Limpar()
+        {
+            Console.Clear();
+        }
         static void Main(string[] args)
         {
             double saque, deposito, transferir;
@@ -19,7 +24,32 @@ namespace contaCorrente
             raquel.saldo = 200.00;
 
 
-            Console.WriteLine($"Informaçoes da conta: \n\nNumero da conta: {ricardo.numero} \nTitular: {ricardo.titular} \nSaldo: {ricardo.saldo}");
+            //logar na conta
+            Logar();
+            void Logar()
+            {
+                Console.WriteLine("Digite seu login.");
+                string login = Console.ReadLine();
+                Console.WriteLine("Digite sua senha.");
+                string senha = Console.ReadLine();
+                bool logCerto = ricardo.Login(login, senha);
+                if (logCerto)
+                {
+                    Console.WriteLine("\n\nLogin realizado com sucesso");
+                }
+                else
+                {
+                    Console.WriteLine("Login ou senha inválida, tente novamente");
+                    Console.ReadLine();
+                    Limpar();
+                    Logar();
+                }
+
+            }
+
+            //informações da conta
+
+            Console.WriteLine($"\n\nInformaçoes da conta: \n\nNumero da conta: {ricardo.numero} \nTitular: {ricardo.titular} \nSaldo: {ricardo.saldo}");
 
             //deposito
             Console.WriteLine("\n\nQuanto deseja depositar?");
@@ -41,7 +71,7 @@ namespace contaCorrente
             {
                 Console.WriteLine("Saldo insuficiente!");
             }
-            
+
             //transferir 
             Console.WriteLine("Quanto deseja transferir para raquel?");
             transferir = double.Parse(Console.ReadLine());

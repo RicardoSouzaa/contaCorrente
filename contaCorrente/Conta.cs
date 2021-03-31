@@ -5,6 +5,8 @@
         public int numero;
         public string titular;
         public double saldo;
+        public string login;
+        public string senha;
 
         public bool Saca(double valor)
         {
@@ -29,5 +31,20 @@
             }
 
         }
+
+        public bool Login(string login, string senha)
+        {
+            if (login == "ricardo" && senha == "a123")
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+            
+
+        }
+
     }
 }
