@@ -3,10 +3,9 @@
     class Conta
     {
         public int numero;
-        public string titular;
         public double saldo;
-        public string login;
-        public string senha;
+        public Cliente titular;
+
 
         public bool Saca(double valor)
         {
@@ -38,11 +37,11 @@
             {
                 return true;
             }
-            else 
+            else
             {
                 return false;
             }
-            
+
 
         }
 
