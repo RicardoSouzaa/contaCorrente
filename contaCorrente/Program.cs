@@ -35,18 +35,18 @@ namespace contaCorrente
             {
                 titular = ricardo,
                 numero = 1,
-                saldo = 150.00
+                saldo = 1000.00
             };
 
             Conta contaRaquel = new Conta
             {
                 numero = 1,
                 titular = raquel,
-                saldo = 200.00
+                saldo = 2000.00
             };
 
 
-            //logar na conta
+            //logar na conta - Loging: ricardo senha: a123
             Logar();
             void Logar()
             {
@@ -71,7 +71,7 @@ namespace contaCorrente
 
             //informações da conta
 
-            Console.WriteLine($"\n\nInformaçoes da conta: \n\nNumero da conta: {contaRicardo.numero} \nTitular: {contaRicardo.titular} \nSaldo: {contaRicardo.saldo}");
+            Console.WriteLine($"\n\nInformaçoes da conta: \n\nNumero da conta: {contaRicardo.numero} \nTitular: {ricardo.nome} \nSaldo: {contaRicardo.saldo}");
 
             //deposito
             Console.WriteLine("\n\nQuanto deseja depositar?");
@@ -97,7 +97,7 @@ namespace contaCorrente
             //transferir 
             Console.WriteLine("Quanto deseja transferir para raquel?");
             transferir = double.Parse(Console.ReadLine());
-            contaRicardo.Transferir(transferir, contaRaquel); // valor, conta destino / sem o REF o valor nao vai para o objeto raquel...
+            contaRicardo.Transferir(transferir, contaRaquel); // valor, conta destino 
             Console.WriteLine($"\nnovo saldo ricardo: {contaRicardo.saldo} \nnovo saldo raquel {contaRaquel.saldo}");
             Console.ReadLine();
         }

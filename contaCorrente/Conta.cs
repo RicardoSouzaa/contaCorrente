@@ -1,4 +1,6 @@
-﻿namespace contaCorrente
+﻿using System;
+
+namespace contaCorrente
 {
     class Conta
     {
@@ -28,7 +30,6 @@
             {
                 destino.Depositar(valor);
             }
-
         }
 
         public bool Login(string login, string senha)
@@ -41,9 +42,6 @@
             {
                 return false;
             }
-
-
         }
-
     }
 }
